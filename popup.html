@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Todo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>My Todo List</h1>
+      <div class="stats">
+        <span id="todoCount">0 tasks</span>
+      </div>
+    </div>
+
+    <div class="input-container">
+      <input 
+        type="text" 
+        id="todoInput" 
+        placeholder="What needs to be done?"
+        autocomplete="off"
+      >
+      <div class="task-options">
+        <select id="taskType" class="task-type-select">
+          <option value="boolean">✓ Checkbox</option>
+          <option value="counter">🔢 Counter</option>
+        </select>
+        <input 
+          type="number" 
+          id="goalInput" 
+          placeholder="Goal"
+          min="1"
+          class="goal-input hidden"
+        >
+      </div>
+      <button id="addBtn">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+    </div>
+
+    <ul id="todoList" class="todo-list"></ul>
+
+    <div class="footer">
+      <button id="clearCompleted" class="clear-btn">Clear Completed</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
